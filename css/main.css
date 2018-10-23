@@ -755,19 +755,19 @@ input:-ms-placeholder {
 /* For iPhone portrait layouts only */
 @media only screen and (max-device-width: 480px) and (orientation: portrait) {
     #viewer {
-      width: 256px;
-      height: 432px;
+      width: 80%;
+      height: 80%;
     }
     #viewer iframe {
-       width: 256px;
-       height: 432px;
+      width: 80%;
+      height: 80%;
     }
 }
 /* For iPhone landscape layouts only */
 @media only screen and (max-device-width: 480px) and (orientation: landscape) {
     #viewer iframe {
-        width: 256px;
-        height: 124px;
+      width: 80%;
+      height: 80%;
     }
 }
 
