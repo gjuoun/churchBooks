@@ -37,7 +37,7 @@
 
       // get bookName from the cookie
       const bookName = getCookie("book")
-
+      console.log(`./book/${bookName}.epub`)
       // start reader by book name
       document.onreadystatechange = function () {
         if (document.readyState == "complete") {
