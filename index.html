@@ -19,8 +19,9 @@
   const link = document.querySelector('ol')
   link.addEventListener("click",
     (event) => {
-      const book = event.target.innerText
-      setCookie(book, 7)
+      let book = event.target.innerText
+      book = book.replace(/[\s]/g, "_")
+      console.log(book)
       document.cookie = `book = ${book}`
     })
 
