@@ -34,6 +34,28 @@
         }
       };
 
+      function biggerFont() {
+        // let fontsize = document.querySelector("#viewer")
+        // fontsize.style.fontSize = "large"
+        let ifm = document.querySelector('iframe')
+        var innerDoc = ifm.contentDocument || ifm.contentWindow.document
+        let fontEl = innerDoc.querySelector('html')
+        fontEl.style.fontSize = "large"
+      }
+
+      function smallerFont() {
+        let ifm = document.querySelector('iframe')
+        var innerDoc = ifm.contentDocument || ifm.contentWindow.document
+        let fontEl = innerDoc.querySelector('html')
+        fontEl.style.fontSize = "small"
+      }
+
+      function normalFont() {
+        let ifm = document.querySelector('iframe')
+        var innerDoc = ifm.contentDocument || ifm.contentWindow.document
+        let fontEl = innerDoc.querySelector('html')
+        fontEl.style.fontSize = "medium"
+      }
     </script>
 
     <!-- File Storage -->
@@ -95,6 +117,9 @@
             <span id="chapter-title"></span>
         </div>
         <div id="title-controls">
+            <a href="#" onclick="biggerFont()" style="font-size: large">A</a>
+            <a href="#" onclick="normalFont()" >A</a>
+            <a href="#" onclick="smallerFont()" >a</a>
             <a id="bookmark" class="icon-bookmark-empty">Bookmark</a>
             <a id="setting" class="icon-cog">Settings</a>
             <a id="fullscreen" class="icon-resize-full">Fullscreen</a>
@@ -112,14 +137,14 @@
     <div class="md-content">
         <h3>Settings</h3>
         <div>
-            <a href="./" >Return to home</a>
-            <p>
-                <!--<input type="checkbox" id="sidebarReflow" name="sidebarReflow">Reflow text when sidebars are open.-->
-            </p>
+            <p><a href="./" >Return to home</a></p>
+
         </div>
         <div class="closer icon-cancel-circled"></div>
     </div>
 </div>
+
+
 <div class="overlay"></div>
 </body>
 </html>
