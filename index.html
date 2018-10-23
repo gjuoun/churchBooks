@@ -10,9 +10,21 @@
 <body>
 
 <ol>
-    <li><a href="./bible_recovery.html">Bible Recovery Version</a></li>
-    <li><a href="./hymn_book.html">Hymn Book</a></li>
+    <li><a href="./reader.html">Holy Bible Recovery Version</a></li>
+    <li><a href="./reader.html">Hymns and Songs</a></li>
 </ol>
 
+
+<script>
+  const link = document.querySelector('ol')
+  link.addEventListener("click",
+    (event) => {
+      const book = event.target.innerText
+      setCookie(book, 7)
+      document.cookie = `book = ${book}`
+    })
+
+
+</script>
 </body>
 </html>

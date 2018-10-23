@@ -19,9 +19,29 @@
     <script>
       "use strict";
 
+      function getCookie(cname) {
+        var name = cname + "=";
+        var ca = document.cookie.split(';');
+        for(var i = 0; i < ca.length; i++) {
+          var c = ca[i];
+          while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+          }
+          if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+          }
+        }
+        return "";
+      }
+
+
+      // get bookName from the cookie
+      const bookName = getCookie("book")
+
+      // start reader by book name
       document.onreadystatechange = function () {
         if (document.readyState == "complete") {
-          window.reader = ePubReader("./book/Holy_Bible_Recovery_Version.epub", {
+          window.reader = ePubReader(`./book/${bookName}.epub`, {
             restore: true
           });
         }
@@ -106,7 +126,6 @@
         <h3>Settings</h3>
         <div>
             <a href="./" >Return to home</a>
-
             <p>
                 <!--<input type="checkbox" id="sidebarReflow" name="sidebarReflow">Reflow text when sidebars are open.-->
             </p>
