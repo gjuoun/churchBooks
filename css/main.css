@@ -536,16 +536,13 @@ input:-ms-placeholder {
 
 .modal {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 50%;
-  width: 630px;
+  top: 20%;
+  left: 0%;
+  width: 100%;
 
   height: auto;
   z-index: 2000;
   visibility: hidden;
-  margin-left: -320px;
-  margin-top: -160px;
 
 }
 
@@ -582,6 +579,10 @@ input:-ms-placeholder {
   border-radius: 3px;
   margin: 0 auto;
   height: 320px;
+}
+
+.md-content a{
+  color: #ffffff;
 }
 
 .md-content h3 {
