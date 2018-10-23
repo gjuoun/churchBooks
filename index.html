@@ -21,8 +21,8 @@
     (event) => {
       let book = event.target.innerText
       book = book.replace(/[\s]/g, "_")
-      console.log(book)
-      document.cookie = `book = ${book}`
+      // console.log(book)
+      localStorage.setItem("book", book)
     })
 
 
