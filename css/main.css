@@ -695,9 +695,9 @@ input:-ms-placeholder {
 
   .arrow {
     height: 100%;
-    top: 45px;
+    /*top: 45px;*/
     width: 10%;
-    text-indent: -10000px;
+    text-indent: 10px;
   }
 
   #main {
