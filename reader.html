@@ -39,31 +39,13 @@
         let ifm = document.querySelector('iframe')
         let innerDoc = ifm.contentDocument || ifm.contentWindow.document
         let fontEl = innerDoc.querySelector('html')
-        fontEl.style.fontSize = size 
+        fontEl.style.fontSize = size
+        let epubView= document.querySelector('#viewer')
+        epubView.addEventListener("change", (e) => {
+          console.log("changed")
+        })
       }
 
-      function biggerFont() {
-        // let fontsize = document.querySelector("#viewer")
-        // fontsize.style.fontSize = "large"
-        let ifm = document.querySelector('iframe')
-        var innerDoc = ifm.contentDocument || ifm.contentWindow.document
-        let fontEl = innerDoc.querySelector('html')
-        fontEl.style.fontSize = "large"
-      }
-
-      function smallerFont() {
-        let ifm = document.querySelector('iframe')
-        var innerDoc = ifm.contentDocument || ifm.contentWindow.document
-        let fontEl = innerDoc.querySelector('html')
-        fontEl.style.fontSize = "small"
-      }
-
-      function normalFont() {
-        let ifm = document.querySelector('iframe')
-        var innerDoc = ifm.contentDocument || ifm.contentWindow.document
-        let fontEl = innerDoc.querySelector('html')
-        fontEl.style.fontSize = "medium"
-      }
     </script>
 
     <!-- File Storage -->
