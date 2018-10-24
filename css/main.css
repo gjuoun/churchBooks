@@ -778,12 +778,12 @@ input:-ms-placeholder {
 @media only screen and (max-device-width: 480px) and (orientation: portrait) {
     #viewer {
         width: 80%;
-        height: 80%;
+        height: 90%;
     }
 
     #viewer iframe {
         width: 80%;
-        height: 80%;
+        height: 90%;
     }
 
 }
@@ -792,7 +792,7 @@ input:-ms-placeholder {
 @media only screen and (max-device-width: 480px) and (orientation: landscape) {
     #viewer iframe {
         width: 80%;
-        height: 80%;
+        height: 90%;
     }
 }
 

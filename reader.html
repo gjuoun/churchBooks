@@ -34,6 +34,14 @@
         }
       };
 
+
+      function setFont(size){
+        let ifm = document.querySelector('iframe')
+        let innerDoc = ifm.contentDocument || ifm.contentWindow.document
+        let fontEl = innerDoc.querySelector('html')
+        fontEl.style.fontSize = size 
+      }
+
       function biggerFont() {
         // let fontsize = document.querySelector("#viewer")
         // fontsize.style.fontSize = "large"
@@ -117,9 +125,9 @@
             <span id="chapter-title"></span>
         </div>
         <div id="title-controls">
-            <a href="#" onclick="biggerFont()" style="font-size: large">A</a>
-            <a href="#" onclick="normalFont()" >A</a>
-            <a href="#" onclick="smallerFont()" >a</a>
+            <a href="#" onclick="setFont('large')" style="font-size: large">A</a>
+            <a href="#" onclick="setFont('medium')" >A</a>
+            <a href="#" onclick="setFont('small')" >a</a>
             <a id="bookmark" class="icon-bookmark-empty">Bookmark</a>
             <a id="setting" class="icon-cog">Settings</a>
             <a id="fullscreen" class="icon-resize-full">Fullscreen</a>
