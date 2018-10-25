@@ -1,0 +1,100 @@
+html {
+    font-size: 18px;
+    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+}
+
+h2, #copyright{
+    font-family: Calisto MT,Bookman Old Style,Bookman,Goudy Old Style,Garamond,Hoefler Text,Bitstream Charter,Georgia,serif;
+    color: #666;
+}
+
+p{
+    margin: auto;
+}
+
+#copyright{
+    padding: 10px;
+    width: 80%;
+    font-size: 0.5em;
+    text-align: right;
+}
+
+ol {
+    padding: 0;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+
+.container h2 {
+    text-align: center;
+}
+
+.menu-container, .footer {
+    width: 50%;
+    margin: auto;
+}
+
+li {
+    padding: 10px;
+    margin: 20px auto;
+    width: 80%;
+    background-color: #FFF;
+    border: 1px solid #4CAF50;
+    border-radius: 10px;
+    box-shadow: 0 3px #AAAAAA;
+
+}
+
+li:hover {
+    background-color: #3CAF50;
+    color: #FFFFFF;
+}
+
+.books-container li:active {
+    background-color: #3e8e41;
+    color: #FFFFFF;
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
+}
+
+#search-bar {
+    text-align: left;
+    background: none;
+    border: 1px solid lightgray;
+}
+
+#search-bar li:disabled {
+}
+
+a {
+    text-decoration: none;
+    text-align: center;
+    color: #4CAF50;
+    font-weight: bolder;
+
+}
+
+.menu-container ol {
+    text-align: center;
+    list-style: none;
+}
+
+.search-bar {
+    width: 50%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 960px) {
+    .menu-container, .search-bar {
+        width: 80%;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    .menu-container, .search-bar {
+        width: 100%;
+    }
+}

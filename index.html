@@ -5,90 +5,8 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/index_custom.css">
     <title>church books</title>
-    <style>
-        html {
-            font-size: 18px;
-        }
-
-        ol {
-            padding: 0;
-        }
-
-        .container {
-            width: 100%;
-            margin: auto;
-        }
-
-        .container h2 {
-            text-align: center;
-        }
-
-        .books-container {
-            width: 50%;
-            margin: auto;
-
-        }
-
-        li {
-            padding: 10px;
-            margin: 20px auto;
-            width: 80%;
-            background-color: #4CAF50;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 5px #999;
-
-        }
-
-        li:hover {
-            background-color: #3e8e41
-        }
-
-        /*li:active {*/
-        /*background-color: #3e8e41;*/
-        /*box-shadow: 0 5px #666;*/
-        /*transform: translateY(4px);*/
-        /*}*/
-
-        #search-bar {
-            text-align: left;
-            background: none;
-            border: 1px solid lightgray;
-        }
-
-        #search-bar li:disabled {
-        }
-
-        a {
-            text-decoration: none;
-            text-align: center;
-            color: #fff;
-
-        }
-
-        .books-container ol {
-            text-align: center;
-            list-style: none;
-        }
-
-        .search-bar {
-            width: 50%;
-            margin: auto;
-        }
-
-        @media only screen and (max-width: 960px) {
-            .books-container, .search-bar {
-                width: 80%;
-            }
-        }
-
-        @media only screen and (max-width: 720px) {
-            .books-container, .search-bar {
-                width: 100%;
-            }
-        }
-    </style>
     <script src="js/libs/jquery.min.js"></script>
 
 </head>
@@ -97,76 +15,33 @@
 
 <div class="container">
     <h2>books for the church</h2>
-    <div class="books-container">
+    <div class="menu-container">
         <ol>
             <li id="search-bar">
                 <gcse:search></gcse:search>
             </li>
-            <a href="./reader.html">
-                <li>Holy Bible Recovery Version</li>
-            </a>
-            <a href="./reader.html">
-                <li>Hymns and Songs</li>
-            </a>
-            <a href="./reader.html">
-                <li>Holy Bible Rev Simplified Chinese</li>
-            </a>
+            <div class="books-container">
+                <a href="./reader.html">
+                    <li>Holy Bible Recovery Version</li>
+                </a>
+                <a href="./reader.html">
+                    <li>Hymns and Songs</li>
+                </a>
+                <a href="./reader.html">
+                    <li>Holy Bible Rev Simplified Chinese</li>
+                </a>
 
-            <a href="http://recoveryversion.jp/bible_menu.php">
-                <li>Holy Bible Rev Online Japanese</li>
-            </a>
-            <a href="http://rv.or.kr/include/flex2/viewer2/recovery.php">
-                <li>Holy Bible Rev Online Korean</li>
-            </a>
-
-
+                <a href="http://recoveryversion.jp/bible_menu.php">
+                    <li>Holy Bible Rev Online Japanese</li>
+                </a>
+            </div>
         </ol>
+
     </div>
-
+    <div class="footer">
+        <p id="copyright">Powered by the church in Halifax</p>
+    </div>
 </div>
-
-
-<script>
-  class initPage {
-    constructor() {
-
-      this.addBookCLickListener()
-      this.searchBar()
-    }
-
-    searchBar() {
-      var cx = '007172865999873295840:zvftfiyuczi'
-      var gcse = document.createElement('script')
-      gcse.type = 'text/javascript'
-      gcse.async = true
-      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx
-      var s = document.getElementsByTagName('script')[0]
-      s.parentNode.insertBefore(gcse, s)
-
-      window.onload = function () {
-        var searchBox = document.getElementById('gsc-i-id1')
-        searchBox.placeholder = 'Search verse or song'
-        searchBox.title = 'Search your favorite verse or song'
-      }
-    }
-
-    addBookCLickListener() {
-      const link = document.querySelector('ol')
-      link.addEventListener('click',
-        (event) => {
-          let book = event.target.innerText
-          book = book.replace(/[\s]/g, '_')
-          localStorage.setItem('book', book)
-        })
-
-      // add hints
-
-    }
-  }
-
-  let newPage = new initPage()
-
-
-</script>
+<script src="./js/custom/index.js"></script>
 </body>
 </html>
