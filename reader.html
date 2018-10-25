@@ -24,8 +24,10 @@
       class initPage {
         constructor() {
           this.getBook()
+          this.searchBar()
           this.copiedLink = ''
           this.fontSize = '14px'
+          this.showSearchBar = false
           localStorage.removeItem('fontSize')
         }
 
@@ -41,6 +43,22 @@
                 restore: true
               })
             }
+          }
+        }
+
+        searchBar() {
+          var cx = '007172865999873295840:zvftfiyuczi'
+          var gcse = document.createElement('script')
+          gcse.type = 'text/javascript'
+          gcse.async = true
+          gcse.src = 'https://cse.google.com/cse.js?cx=' + cx
+          var s = document.getElementsByTagName('script')[0]
+          s.parentNode.insertBefore(gcse, s)
+
+          window.onload = function () {
+            var searchBox = document.getElementById('gsc-i-id1')
+            searchBox.placeholder = 'Search your favorite verse or song'
+            searchBox.title = 'Search your favorite verse or song'
           }
         }
 
@@ -67,7 +85,6 @@
       }
 
 
-
       const copyLink = () => {
         console.log('clicked')
 
@@ -85,6 +102,17 @@
         else {
           alert('You already copied')
         }
+      }
+
+      const showSearchBar = () => {
+        // console.log('pressed', app.showSearchBar)
+        //
+        //   // var mainDiv = document.querySelector('#main')
+        //   var mainDiv = document.querySelector('#main')
+        //   var searchBar = document.createElement('gcse:search')
+        //   mainDiv.insertBefore(searchBar, mainDiv.childNodes[0])
+        //   app.searchBar()
+        //   app.showSearchBar = true
       }
 
     </script>
@@ -138,7 +166,7 @@
 </div>
 <div id="main">
 
-    
+
     <div id="titlebar">
         <div id="opener">
             <a id="slider" class="icon-menu">Menu</a>
@@ -151,6 +179,7 @@
         <div id="title-controls">
             <a href="#" id="bigger-font" onclick="setFont('+')">A</a>
             <a href="#" id="smaller-font" onclick="setFont('-')">a</a>
+            <!--<a href="#" id="search-button" onclick="showSearchBar()">Search</a>-->
             <a id="bookmark" class="icon-bookmark-empty">Bookmark</a>
             <a id="setting" class="icon-cog">Settings</a>
             <a id="fullscreen" class="icon-resize-full">Fullscreen</a>
@@ -158,9 +187,9 @@
     </div>
 
     <div id="divider"></div>
-    <div id="prev" class="arrow" >‹</div>
+    <div id="prev" class="arrow">‹</div>
     <div id="viewer"></div>
-    <div id="next" class="arrow" >›</div>
+    <div id="next" class="arrow">›</div>
 
     <div id="loader"><img src="img/loader.gif"></div>
 </div>
@@ -175,16 +204,20 @@
                 <a href="javascript:void(0);" onclick="copyLink()">
                     <li>Copy this link</li>
                 </a>
+
             </ul>
             <a id="admin" href="javascript:void(0);">
                 Powered by Jun Guo</a>
 
         </div>
+
         <div class="closer icon-cancel-circled"></div>
     </div>
+
 </div>
 
 
-<div class="overlay"></div>
+<div class="overlay">
+</div>
 </body>
 </html>
