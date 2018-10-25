@@ -11,40 +11,59 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/popup.css">
-
+    <!--third party libs-->
     <script src="js/libs/jquery.min.js"></script>
     <script src="js/verify.js"></script>
     <script src="js/libs/zip.min.js"></script>
+    <script src="js/libs/clipboard.min.js"></script>
 
     <script>
-      "use strict";
-
-
+      'use strict'
 
 
       // get bookName from the cookie
-      const bookName = localStorage.getItem("book")
+      const bookName = localStorage.getItem('book')
       console.log(`./book/${bookName}.epub`)
       // start reader by book name
       document.onreadystatechange = function () {
-        if (document.readyState == "complete") {
+        if (document.readyState == 'complete') {
           window.reader = ePubReader(`./book/${bookName}.epub`, {
             restore: true
-          });
+          })
         }
-      };
+      }
 
 
-      function setFont(size){
+      function setFont(size) {
         let ifm = document.querySelector('iframe')
         let innerDoc = ifm.contentDocument || ifm.contentWindow.document
         let fontEl = innerDoc.querySelector('html')
         fontEl.style.fontSize = size
-        let epubView= document.querySelector('#viewer')
-        epubView.addEventListener("change", (e) => {
-          console.log("changed")
+        let epubView = document.querySelector('#viewer')
+        epubView.addEventListener('change', (e) => {
+          console.log('changed')
         })
       }
+
+      let copiedLink = ''
+
+      function copyLink() {
+        if (copiedLink != document.location.href) {
+          copiedLink = document.location.href
+          const el = document.createElement('textarea')
+          el.value = copiedLink
+          document.body.appendChild(el)
+          el.select()
+          document.execCommand('copy')
+          document.body.removeChild(el)
+
+          alert('You can paste and share now')
+        }
+        else {
+          alert('You already copied')
+        }
+      }
+
 
     </script>
 
@@ -108,8 +127,8 @@
         </div>
         <div id="title-controls">
             <a href="#" onclick="setFont('large')" style="font-size: large">A</a>
-            <a href="#" onclick="setFont('medium')" >A</a>
-            <a href="#" onclick="setFont('small')" >a</a>
+            <a href="#" onclick="setFont('medium')">A</a>
+            <a href="#" onclick="setFont('small')">a</a>
             <a id="bookmark" class="icon-bookmark-empty">Bookmark</a>
             <a id="setting" class="icon-cog">Settings</a>
             <a id="fullscreen" class="icon-resize-full">Fullscreen</a>
@@ -126,8 +145,11 @@
 <div class="modal md-effect-1" id="settings-modal">
     <div class="md-content">
         <h3>Settings</h3>
-        <div>
-            <p><a href="./" >Return to home</a></p>
+        <div style="text-align: center;">
+            <p><a href="./" style="text-decoration: none">Return to Library</a></p>
+            <p><a href="javascript:void(0);" style="text-decoration: none" onclick="copyLink()">Copy this link</a></p>
+            <p style="position:fixed; width:50% ;bottom: 0px; left: 25%;"><a href="#" style="text-decoration: none; ">Powered
+                by Jun Guo</a></p>
 
         </div>
         <div class="closer icon-cancel-circled"></div>
