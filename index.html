@@ -11,10 +11,9 @@
             font-size: 18px;
         }
 
-        ol{
+        ol {
             padding: 0;
         }
-
 
         .container {
             width: 100%;
@@ -42,21 +41,23 @@
 
         }
 
-        li:hover {background-color: #3e8e41}
+        li:hover {
+            background-color: #3e8e41
+        }
 
         /*li:active {*/
-            /*background-color: #3e8e41;*/
-            /*box-shadow: 0 5px #666;*/
-            /*transform: translateY(4px);*/
+        /*background-color: #3e8e41;*/
+        /*box-shadow: 0 5px #666;*/
+        /*transform: translateY(4px);*/
         /*}*/
 
-
-        #search-bar{
-            background: none ;
+        #search-bar {
+            text-align: left;
+            background: none;
             border: 1px solid lightgray;
         }
 
-        #search-bar li:disabled{
+        #search-bar li:disabled {
         }
 
         a {
@@ -107,14 +108,20 @@
             <a href="./reader.html">
                 <li>Holy Bible Rev Simplified Chinese</li>
             </a>
+
+            <a href="http://recoveryversion.jp/bible_menu.php">
+                <li>Holy Bible Rev Online Japanese</li>
+            </a>
+            <a href="http://rv.or.kr/include/flex2/viewer2/recovery.php">
+                <li>Holy Bible Rev Online Korean</li>
+            </a>
             <li id="search-bar">
                 <gcse:search></gcse:search>
             </li>
+
         </ol>
     </div>
 
-    <div class="search-bar">
-    </div>
 </div>
 
 
@@ -137,7 +144,7 @@
 
       window.onload = function () {
         var searchBox = document.getElementById('gsc-i-id1')
-        searchBox.placeholder = 'any verse or song'
+        searchBox.placeholder = 'Search verse or song'
         searchBox.title = 'Search your favorite verse or song'
       }
     }
