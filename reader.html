@@ -19,101 +19,7 @@
     <script src="js/libs/clipboard.min.js"></script>
 
     <script>
-      'use strict'
 
-      class initPage {
-        constructor() {
-          this.getBook()
-          this.searchBar()
-          this.copiedLink = ''
-          this.fontSize = '14px'
-          this.showSearchBar = false
-          localStorage.removeItem('fontSize')
-        }
-
-
-        getBook() {
-          // get bookName from the cookie
-          const bookName = localStorage.getItem('book')
-          console.log(`./book/${bookName}.epub`)
-          // start reader by book name
-          document.onreadystatechange = function () {
-            if (document.readyState == 'complete') {
-              window.reader = ePubReader(`./book/${bookName}.epub`, {
-                restore: true
-              })
-            }
-          }
-        }
-
-        searchBar() {
-          var cx = '007172865999873295840:zvftfiyuczi'
-          var gcse = document.createElement('script')
-          gcse.type = 'text/javascript'
-          gcse.async = true
-          gcse.src = 'https://cse.google.com/cse.js?cx=' + cx
-          var s = document.getElementsByTagName('script')[0]
-          s.parentNode.insertBefore(gcse, s)
-
-          window.onload = function () {
-            var searchBox = document.getElementById('gsc-i-id1')
-            searchBox.placeholder = 'Search your favorite verse or song'
-            searchBox.title = 'Search your favorite verse or song'
-          }
-        }
-
-      }
-
-      let app = new initPage()
-
-
-      const setFont = (size) => {
-        console.log(size)
-        let ifm = document.querySelector('iframe')
-        let innerDoc = ifm.contentDocument || ifm.contentWindow.document
-        let fontEl = innerDoc.querySelector('html')
-        let style = window.getComputedStyle(fontEl, null).getPropertyValue('font-size')
-        let fontSize = parseFloat(style)
-
-        // console.log(fontSize)
-        if (size === '+')
-          app.fontSize = ` ${fontSize + 1}px`
-        else
-          app.fontSize = ` ${fontSize - 1}px`
-        fontEl.style.fontSize = app.fontSize
-        localStorage.setItem('fontSize', app.fontSize)
-      }
-
-
-      const copyLink = () => {
-        console.log('clicked')
-
-        if (app.copiedLink != document.location.href) {
-          app.copiedLink = document.location.href
-          const el = document.createElement('textarea')
-          el.value = app.copiedLink
-          document.body.appendChild(el)
-          el.select()
-          document.execCommand('copy')
-          document.body.removeChild(el)
-
-          alert('You can paste and share now')
-        }
-        else {
-          alert('You already copied')
-        }
-      }
-
-      const showSearchBar = () => {
-        // console.log('pressed', app.showSearchBar)
-        //
-        //   // var mainDiv = document.querySelector('#main')
-        //   var mainDiv = document.querySelector('#main')
-        //   var searchBar = document.createElement('gcse:search')
-        //   mainDiv.insertBefore(searchBar, mainDiv.childNodes[0])
-        //   app.searchBar()
-        //   app.showSearchBar = true
-      }
 
     </script>
 
@@ -204,20 +110,15 @@
                 <a href="javascript:void(0);" onclick="copyLink()">
                     <li>Copy this link</li>
                 </a>
-
             </ul>
-            <!--<a id="admin" href="javascript:void(0);">-->
-                <!--Powered by The church in Halifax</a>-->
-
         </div>
-
         <div class="closer icon-cancel-circled"></div>
     </div>
-
 </div>
-
 
 <div class="overlay">
 </div>
+
+<script src="./js/custom/reader.js"></script>
 </body>
 </html>
