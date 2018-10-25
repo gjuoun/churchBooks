@@ -9848,6 +9848,7 @@ var IframeView = function () {
 	}, {
 		key: "load",
 		value: function load(contents) {
+			
 			var loading = new _core.defer();
 			var loaded = loading.promise;
 
@@ -9989,6 +9990,8 @@ var IframeView = function () {
 	}, {
 		key: "show",
 		value: function show() {
+   
+			
 
 			this.element.style.visibility = "visible";
 
@@ -10002,10 +10005,19 @@ var IframeView = function () {
 			}
 
 			this.emit(_constants.EVENTS.VIEWS.SHOWN, this);
+			
+			
+      // add customer event here when loading a new page
+      let innerDoc = this.iframe.contentDocument || this.iframe.contentWindow.document
+      let fontEl = innerDoc.querySelector('html')
+			let fontSize = localStorage.getItem('fontSize')
+			if(fontSize)
+      	fontEl.style.fontSize = fontSize
 		}
 	}, {
 		key: "hide",
 		value: function hide() {
+			
 			// this.iframe.style.display = "none";
 			this.element.style.visibility = "hidden";
 			this.iframe.style.visibility = "hidden";
@@ -10050,6 +10062,7 @@ var IframeView = function () {
 	}, {
 		key: "onDisplayed",
 		value: function onDisplayed(view) {
+			
 			// Stub, override with a custom functions
 		}
 	}, {

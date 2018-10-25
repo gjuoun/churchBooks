@@ -1,0 +1,24 @@
+.settings {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.settings a{
+    clear: both;
+    width: 100%;
+    text-decoration: none;
+}
+
+.settings ul{
+    height: 80%;
+    list-style: none;
+}
+
+#admin a{
+    width: 100%;
+    /*text-decoration: none;*/
+    position:fixed;
+    bottom: 0px;
+    left: 25%
+}

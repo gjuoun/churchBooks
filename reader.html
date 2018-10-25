@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/reader_custom.css">
     <!--third party libs-->
     <script src="js/libs/jquery.min.js"></script>
     <script src="js/verify.js"></script>
@@ -20,38 +21,60 @@
     <script>
       'use strict'
 
-
-      // get bookName from the cookie
-      const bookName = localStorage.getItem('book')
-      console.log(`./book/${bookName}.epub`)
-      // start reader by book name
-      document.onreadystatechange = function () {
-        if (document.readyState == 'complete') {
-          window.reader = ePubReader(`./book/${bookName}.epub`, {
-            restore: true
-          })
+      class initPage {
+        constructor() {
+          this.getBook()
+          this.copiedLink = ''
+          this.fontSize = '14px'
+          localStorage.removeItem('fontSize')
         }
+
+
+        getBook() {
+          // get bookName from the cookie
+          const bookName = localStorage.getItem('book')
+          console.log(`./book/${bookName}.epub`)
+          // start reader by book name
+          document.onreadystatechange = function () {
+            if (document.readyState == 'complete') {
+              window.reader = ePubReader(`./book/${bookName}.epub`, {
+                restore: true
+              })
+            }
+          }
+        }
+
       }
 
+      let app = new initPage()
 
-      function setFont(size) {
+
+      const setFont = (size) => {
+        console.log(size)
         let ifm = document.querySelector('iframe')
         let innerDoc = ifm.contentDocument || ifm.contentWindow.document
         let fontEl = innerDoc.querySelector('html')
-        fontEl.style.fontSize = size
-        let epubView = document.querySelector('#viewer')
-        epubView.addEventListener('change', (e) => {
-          console.log('changed')
-        })
+        let style = window.getComputedStyle(fontEl, null).getPropertyValue('font-size')
+        let fontSize = parseFloat(style)
+
+        // console.log(fontSize)
+        if (size === '+')
+          app.fontSize = ` ${fontSize + 1}px`
+        else
+          app.fontSize = ` ${fontSize - 1}px`
+        fontEl.style.fontSize = app.fontSize
+        localStorage.setItem('fontSize', app.fontSize)
       }
 
-      let copiedLink = ''
 
-      function copyLink() {
-        if (copiedLink != document.location.href) {
-          copiedLink = document.location.href
+
+      const copyLink = () => {
+        console.log('clicked')
+
+        if (app.copiedLink != document.location.href) {
+          app.copiedLink = document.location.href
           const el = document.createElement('textarea')
-          el.value = copiedLink
+          el.value = app.copiedLink
           document.body.appendChild(el)
           el.select()
           document.execCommand('copy')
@@ -63,8 +86,6 @@
           alert('You already copied')
         }
       }
-
-
 
     </script>
 
@@ -127,9 +148,8 @@
             <span id="chapter-title"></span>
         </div>
         <div id="title-controls">
-            <a href="#" onclick="setFont('large')" style="font-size: large">A</a>
-            <a href="#" onclick="setFont('medium')">A</a>
-            <a href="#" onclick="setFont('small')">a</a>
+            <a href="#" id="bigger-font" onclick="setFont('+')">A</a>
+            <a href="#" id="smaller-font" onclick="setFont('-')">a</a>
             <a id="bookmark" class="icon-bookmark-empty">Bookmark</a>
             <a id="setting" class="icon-cog">Settings</a>
             <a id="fullscreen" class="icon-resize-full">Fullscreen</a>
@@ -137,23 +157,26 @@
     </div>
 
     <div id="divider"></div>
-    <div id="prev" class="arrow">‹</div>
+    <div id="prev" class="arrow" >‹</div>
     <div id="viewer"></div>
-    <div id="next" class="arrow">›</div>
+    <div id="next" class="arrow" >›</div>
 
     <div id="loader"><img src="img/loader.gif"></div>
 </div>
 <div class="modal md-effect-1" id="settings-modal">
     <div class="md-content">
         <h3>Settings</h3>
-        <div style="text-align: center;">
-            <p><a href="./" style="text-decoration: none">Return to Library</a></p>
-            <p><a href="javascript:void(0);" style="text-decoration: none" onclick="copyLink()">Copy this link</a></p>
-            <p style="position:fixed; width:50% ;bottom: 0px; left: 25%;">
-                <a href="javascript:void(0);" style="text-decoration: none; ">
-                    Powered by Jun Guo
+        <div class="settings">
+            <ul>
+                <a href="./">
+                    <li>Return to Library</li>
                 </a>
-            </p>
+                <a href="javascript:void(0);" onclick="copyLink()">
+                    <li>Copy this link</li>
+                </a>
+            </ul>
+            <a id="admin" href="javascript:void(0);">
+                Powered by Jun Guo</a>
 
         </div>
         <div class="closer icon-cancel-circled"></div>

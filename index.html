@@ -12,16 +12,31 @@
         }
 
         .container {
-            width: 80%;
+            width: 100%;
             margin: auto;
         }
 
         .books-container {
+            width: 50%;
+            margin: auto;
 
         }
 
-        gcse {
+        .search-bar{
             width: 50%;
+            margin: auto;
+        }
+
+        @media only screen and (max-width: 960px){
+            .books-container,.search-bar{
+                width: 80%;
+            }
+        }
+
+        @media only screen and (max-width: 720px){
+            .books-container,.search-bar{
+                width: 100%;
+            }
         }
     </style>
     <script src="js/libs/jquery.min.js"></script>
@@ -39,9 +54,9 @@
         </ol>
     </div>
 
-    <p></p>
-    <gcse:search></gcse:search>
-
+    <div class="search-bar">
+        <gcse:search></gcse:search>
+    </div>
 </div>
 
 
@@ -54,13 +69,20 @@
     }
 
     searchBar() {
-      var cx = '007172865999873295840:zvftfiyuczi'
-      var gcse = document.createElement('script')
-      gcse.type = 'text/javascript'
-      gcse.async = true
-      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx
-      var s = document.getElementsByTagName('script')[0]
-      s.parentNode.insertBefore(gcse, s)
+        var cx = '007172865999873295840:zvftfiyuczi';
+        var gcse = document.createElement('script');
+        gcse.type = 'text/javascript';
+        gcse.async = true;
+        gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(gcse, s);
+
+      window.onload = function()
+      {
+        var searchBox =  document.getElementById("gsc-i-id1");
+        searchBox.placeholder="Search your favorite verse or song";
+        searchBox.title="Search your favorite verse or song";
+      }
     }
 
     addBookCLickListener(){
@@ -71,6 +93,9 @@
           book = book.replace(/[\s]/g, '_')
           localStorage.setItem('book', book)
         })
+
+      // add hints
+
     }
   }
 

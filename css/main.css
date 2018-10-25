@@ -612,7 +612,7 @@ input:-ms-placeholder {
 }
 
 .md-content > div {
-    padding: 15px 40px 30px;
+    padding: 0;
     margin: 0;
     font-weight: 300;
     font-size: 14px;
@@ -625,7 +625,7 @@ input:-ms-placeholder {
 
 .md-content > div ul {
     margin: 0;
-    padding: 0 0 30px 20px;
+    padding: 0;
 }
 
 .md-content > div ul li {
