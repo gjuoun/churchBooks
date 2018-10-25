@@ -47,9 +47,12 @@ class initPage {
 // initialize the page
 let app = new initPage()
 
-if(app.isMobile){
-  alert('123')
-}
-else{
-  alert('456')
+
+function japanese() {
+  //monile version
+  if(app.isMobile)
+    window.location.href = 'http://recoveryversion.jp/mb/'
+    // desktop version
+  else
+    window.location.href = 'http://recoveryversion.jp/bible_menu.php'
 }
