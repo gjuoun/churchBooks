@@ -10007,7 +10007,7 @@ var IframeView = function () {
 			this.emit(_constants.EVENTS.VIEWS.SHOWN, this);
 			
 			
-      // add customer event here when loading a new page
+      //!!! add customer event here when loading a new page
       let innerDoc = this.iframe.contentDocument || this.iframe.contentWindow.document
       let fontEl = innerDoc.querySelector('html')
 			let fontSize = localStorage.getItem('fontSize')
