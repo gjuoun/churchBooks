@@ -5,10 +5,23 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Church books</title>
     <style>
-        span{
+        span {
             margin: 0 20px;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+
+        .books-container {
+
+        }
+
+        gcse {
+            width: 50%;
         }
     </style>
     <script src="js/libs/jquery.min.js"></script>
@@ -16,37 +29,52 @@
 </head>
 <body>
 
-<ol>
-    <li><a href="./reader.html">Holy Bible Recovery Version</a></li>
-    <li><a href="./reader.html">Hymns and Songs</a></li>
-    <li><a href="./reader.html">Holy Bible Rev Simplified Chinese</a><span>圣经恢复本 简体中文</span></li>
-    <li><a href="./reader.html">Holy Bible Rev Simplified Chinese English</a><span>圣经恢复本 简体中英对照本</span></li>
-</ol>
+
+<div class="container">
+    <div class="books-container">
+        <ol>
+            <li><a href="./reader.html">Holy Bible Recovery Version</a></li>
+            <li><a href="./reader.html">Hymns and Songs</a></li>
+            <li><a href="./reader.html">Holy Bible Rev Simplified Chinese</a><br><span>圣经恢复本 简体中文</span></li>
+        </ol>
+    </div>
+
+    <p></p>
+    <gcse:search></gcse:search>
+
+</div>
 
 
 <script>
-  const link = document.querySelector('ol')
-  link.addEventListener("click",
-    (event) => {
-      let book = event.target.innerText
-      book = book.replace(/[\s]/g, "_")
-      localStorage.setItem("book", book)
-    })
+  class initPage{
+    constructor() {
 
-
-  var dir = "./book";
-  var fileextension = ".epub";
-  $.ajax({
-    //This will retrieve the contents of the folder if the folder is configured as 'browsable'
-    url: dir,
-    success: function (data) {
-      // List all mp4 file names in the page
-      $(data).find("a:contains(" + fileextension + ")").each(function () {
-        var filename = this.href.replace(window.location.host, "").replace("http:///", "");
-        $("body").append($("<img src=" + dir + filename + "></img>"));
-      });
+      this.addBookCLickListener()
+      this.searchBar()
     }
-  });
+
+    searchBar() {
+      var cx = '007172865999873295840:zvftfiyuczi'
+      var gcse = document.createElement('script')
+      gcse.type = 'text/javascript'
+      gcse.async = true
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx
+      var s = document.getElementsByTagName('script')[0]
+      s.parentNode.insertBefore(gcse, s)
+    }
+
+    addBookCLickListener(){
+      const link = document.querySelector('ol')
+      link.addEventListener('click',
+        (event) => {
+          let book = event.target.innerText
+          book = book.replace(/[\s]/g, '_')
+          localStorage.setItem('book', book)
+        })
+    }
+  }
+
+  let newPage = new initPage()
 
 
 </script>
