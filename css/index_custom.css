@@ -112,6 +112,10 @@ a {
         width: 80%;
     }
 
+    .menu-container{
+        padding: 0;
+    }
+
     .comment{
         padding: 0;
     }
@@ -126,11 +130,4 @@ a {
         width: 100%;
     }
 
-    .comment{
-        padding: 0;
-    }
-
-    #copyright {
-        text-align: center;
-    }
 }
