@@ -1,22 +1,22 @@
 html {
     font-size: 18px;
-    font-family: Candara,Calibri,Segoe,Segoe UI,Optima,Arial,sans-serif;
+    font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
 }
 
-h2, #copyright{
-    font-family: Calisto MT,Bookman Old Style,Bookman,Goudy Old Style,Garamond,Hoefler Text,Bitstream Charter,Georgia,serif;
+h2, #copyright {
+    font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif;
     color: #666;
 }
 
-p{
+p {
     margin: auto;
 }
 
-#copyright{
+#copyright {
     padding: 10px;
     width: 80%;
     font-size: 0.5em;
-    text-align: right;
+    text-align: center;
 }
 
 ol {
@@ -32,7 +32,19 @@ ol {
     text-align: center;
 }
 
-.menu-container, .footer {
+.menu-container {
+    width: 50%;
+    margin: auto;
+    padding: 20px 30px;
+}
+
+.comment{
+    width: 40%;
+    margin: auto;
+}
+
+
+.footer{
     width: 50%;
     margin: auto;
 }
@@ -87,22 +99,38 @@ a {
     margin: auto;
 }
 
+
+
+/*comment class*/
+.wpac-cr, .wp-copyright, .wp-leftrow, .wp-rightrow{
+    visibility: hidden;
+}
+
+
 @media only screen and (max-width: 960px) {
-    .menu-container, .search-bar .footer {
+    .menu-container, .search-bar .footer, .comment {
         width: 80%;
     }
 
-    #copyright{
+    .comment{
+        padding: 0;
+    }
+
+    #copyright {
         text-align: center;
     }
 }
 
 @media only screen and (max-width: 720px) {
-    .menu-container, .search-bar .footer{
+    .menu-container, .search-bar .footer, .comment {
         width: 100%;
     }
 
-    #copyright{
+    .comment{
+        padding: 0;
+    }
+
+    #copyright {
         text-align: center;
     }
 }
