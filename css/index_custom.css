@@ -12,7 +12,7 @@ html {
 
 /*logo*/
 
-.logo > img{
+.logo img{
     vertical-align: middle;
     display: inline;
     max-width: 32px;
