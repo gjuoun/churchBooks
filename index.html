@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/index_custom.css">
-    <title>Overcomer's book</title>
+    <title>Overcomers' Book</title>
     <script src="js/libs/jquery.min.js"></script>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -14,7 +14,12 @@
 
 
 <div class="container">
-    <h2>Overcomer's book</h2>
+    <div class="title">
+        <div class="logo">
+            <img src="origin_icon.png" alt="title_img">
+            <h2>Overcomers' book</h2>
+        </div>
+    </div>
     <div class="menu-container">
         <ol>
             <li id="search-bar">
@@ -55,17 +60,18 @@
     <div class="comment">
         <div id="wpac-comment"></div>
         <script type="text/javascript">
-          wpac_init = window.wpac_init || [];
+          wpac_init = window.wpac_init || []
           wpac_init.push({widget: 'Comment', id: 14620});
-          (function() {
-            if ('WIDGETPACK_LOADED' in window) return;
-            WIDGETPACK_LOADED = true;
-            var mc = document.createElement('script');
-            mc.type = 'text/javascript';
-            mc.async = true;
-            mc.src = 'https://embed.widgetpack.com/widget.js';
-            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
-          })();
+          (function () {
+            if ('WIDGETPACK_LOADED' in window) return
+            WIDGETPACK_LOADED = true
+            var mc = document.createElement('script')
+            mc.type = 'text/javascript'
+            mc.async = true
+            mc.src = 'https://embed.widgetpack.com/widget.js'
+            var s = document.getElementsByTagName('script')[0]
+            s.parentNode.insertBefore(mc, s.nextSibling)
+          })()
         </script>
         <a href="https://widgetpack.com" class="wpac-cr">Comments System WIDGET PACK</a>
     </div>

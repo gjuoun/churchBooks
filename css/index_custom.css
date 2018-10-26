@@ -3,6 +3,32 @@ html {
     font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
 }
 
+.title{
+    margin: 15px auto ;
+    height: 42px;
+    width: 50%;
+    text-align: center;
+}
+
+/*logo*/
+
+.logo > img{
+    vertical-align: middle;
+    display: inline;
+    max-width: 32px;
+    max-height: 32px;
+}
+
+h2{
+    padding-left: 10px;
+    margin: 0;
+    line-height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+
 h2, #copyright {
     font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif;
     color: #666;
@@ -20,6 +46,7 @@ p {
 }
 
 ol {
+    margin: 0;
     padding: 0;
 }
 
@@ -28,9 +55,7 @@ ol {
     margin: auto;
 }
 
-.container h2 {
-    text-align: center;
-}
+
 
 .menu-container {
     width: 50%;
@@ -73,6 +98,7 @@ li:hover {
 }
 
 #search-bar {
+    margin-top: 0;
     text-align: left;
     background: none;
     border: 1px solid lightgray;
