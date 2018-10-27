@@ -29,7 +29,7 @@ h2{
 
 
 
-h2, #copyright {
+h2, .copyright {
     font-family: Calisto MT, Bookman Old Style, Bookman, Goudy Old Style, Garamond, Hoefler Text, Bitstream Charter, Georgia, serif;
     color: #666;
 }
@@ -38,7 +38,7 @@ p {
     margin: auto;
 }
 
-#copyright {
+.copyright {
     padding: 10px;
     width: 80%;
     font-size: 0.5em;
@@ -146,7 +146,7 @@ a {
         padding: 0;
     }
 
-    #copyright {
+    .copyright {
         text-align: center;
     }
 }
