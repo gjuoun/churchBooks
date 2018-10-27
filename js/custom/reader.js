@@ -13,7 +13,10 @@ class initPage {
   
   getBook() {
     // get bookName from the cookie
-    const bookName = localStorage.getItem('book')
+    let bookName = localStorage.getItem('book')
+    if(!bookName){
+      bookName = 'Hymns_and_Songs'
+    }
     console.log(`./book/${bookName}.epub`)
     // start reader by book name
     document.onreadystatechange = function () {
