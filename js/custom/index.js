@@ -6,6 +6,7 @@ class initPage {
     this.addBookCLickListener()
     this.searchBar()
     this.isMobile = this.mobileCheck()
+    window.onscroll = () => {this.scrollMenuBar()}
   }
   
   searchBar() {
@@ -33,8 +34,14 @@ class initPage {
         localStorage.setItem('book', book)
       })
     
-    // add hints
-    
+  }
+  
+  scrollMenuBar(){
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      document.querySelector('.title').style.background = 'rgba(255, 255, 255, 0.5)'
+    } else {
+      document.querySelector('.title').style.background = '#FFF';
+    }
   }
   
   mobileCheck(){

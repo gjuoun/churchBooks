@@ -1,16 +1,25 @@
+body{
+    margin: 0;
+}
+
 html {
     font-size: 18px;
     font-family: Candara, Calibri, Segoe, Segoe UI, Optima, Arial, sans-serif;
 }
 
 .title{
-    margin: 15px auto ;
-    height: 42px;
+    position: fixed;
+    left: 25%;
+    height: 50px;
     width: 50%;
     text-align: center;
+    background: #FFFFFF;
 }
 
-/*logo*/
+.logo   {
+    padding: 8px;
+}
+
 
 .logo img{
     vertical-align: middle;
@@ -60,7 +69,7 @@ ol {
 .menu-container {
     width: 50%;
     margin: auto;
-    padding: 0 30px 20px;
+    padding: 50px 30px 20px;
 }
 
 .comment{
