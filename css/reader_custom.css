@@ -29,6 +29,10 @@
     color: darkgreen;
 }
 
+#smaller-font{
+    font-size: 0.5em;
+}
+
 .loader-container {
     text-align: center;
 }
