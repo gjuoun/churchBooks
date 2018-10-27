@@ -24,7 +24,7 @@
     left: 25%
 }
 
-#backward, #bigger-font, #smaller-font{
+.icon-topright{
     text-decoration: none;
     color: darkgreen;
 }
