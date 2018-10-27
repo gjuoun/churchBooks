@@ -9,14 +9,13 @@ html {
 
 .title{
     width: 100%;
-    /*margin: auto;*/
     height: 50px;
-    /*width: 50%;*/
     text-align: center;
     background: #FFFFFF;
 }
 
 .logo   {
+    z-index: 10;
     width: 50%;
     margin: auto;
     position: fixed;
