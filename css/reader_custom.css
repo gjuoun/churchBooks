@@ -36,3 +36,8 @@
 .loader-container p {
     color: lightgray;
 }
+
+.loader-container a{
+    text-decoration: none;
+    color: darkgreen;
+}
