@@ -8,14 +8,19 @@ html {
 }
 
 .title{
-    margin: auto;
+    width: 100%;
+    /*margin: auto;*/
     height: 50px;
-    width: 50%;
+    /*width: 50%;*/
     text-align: center;
     background: #FFFFFF;
 }
 
 .logo   {
+    width: 50%;
+    margin: auto;
+    position: fixed;
+    left: 25%;
     padding: 8px;
 }
 
@@ -149,11 +154,16 @@ a {
         width: 80%;
     }
 
-    .footer{
+    .footer {
         width: 100%;
     }
+
+    .logo{
+        width: 100%;
+        left: 0;
+    }
     .menu-container{
-        /*padding: 0;*/
+        padding: 0;
     }
 
     .comment{
