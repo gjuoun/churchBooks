@@ -86,12 +86,14 @@
             <span id="chapter-title"></span>
         </div>
         <div id="title-controls">
+            <a href="./" id="backward"> ⇦ </a>
             <a href="#" id="bigger-font" onclick="setFont('+')">A</a>
             <a href="#" id="smaller-font" onclick="setFont('-')">a</a>
             <!--<a href="#" id="search-button" onclick="showSearchBar()">Search</a>-->
             <a id="bookmark" class="icon-bookmark-empty">Bookmark</a>
-            <a id="setting" class="icon-cog">Settings</a>
-            <a id="fullscreen" class="icon-resize-full">Fullscreen</a>
+            <!--<a id="setting" class="icon-cog">Settings</a>-->
+            <!--<a id="fullscreen" class="icon-resize-full">Fullscreen</a>-->
+
         </div>
     </div>
 
@@ -100,7 +102,12 @@
     <div id="viewer"></div>
     <div id="next" class="arrow">›</div>
 
-    <div id="loader"><img src="img/loader.gif"></div>
+    <div id="loader">
+        <div class="loader-container">
+            <img src="img/loader.gif">
+            <p>Loading...<br>You can use this book offline</p>
+        </div>
+    </div>
 </div>
 <div class="modal md-effect-1" id="settings-modal">
     <div class="md-content">
@@ -111,7 +118,7 @@
                     <li>Return to Library</li>
                 </a>
                 <!--<a href="javascript:void(0);" onclick="copyLink()">-->
-                    <!--<li>Copy this link</li>-->
+                <!--<li>Copy this link</li>-->
                 <!--</a>-->
             </ul>
         </div>

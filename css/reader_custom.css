@@ -24,6 +24,15 @@
     left: 25%
 }
 
-gcse{
-    /*background: black;*/
+#backward, #bigger-font, #smaller-font{
+    text-decoration: none;
+    color: darkgreen;
+}
+
+.loader-container {
+    text-align: center;
+}
+
+.loader-container p {
+    color: lightgray;
 }

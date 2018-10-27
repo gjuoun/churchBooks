@@ -9630,7 +9630,7 @@ var IframeView = function () {
 	}, {
 		key: "render",
 		value: function render(request, show) {
-
+			
 			// view.onLayout = this.layout.format.bind(this.layout);
 			this.create();
 
@@ -9753,6 +9753,7 @@ var IframeView = function () {
 	}, {
 		key: "expand",
 		value: function expand(force) {
+			
 			var width = this.lockedWidth;
 			var height = this.lockedHeight;
 			var columns;
@@ -9799,6 +9800,7 @@ var IframeView = function () {
 	}, {
 		key: "reframe",
 		value: function reframe(width, height) {
+   
 			var _this2 = this;
 
 			var size;
@@ -9835,7 +9837,9 @@ var IframeView = function () {
 						_this2.placeMark(mark.element, mark.range);
 					}
 				}
-			});
+      
+      
+      });
 
 			this.onResize(this, size);
 
@@ -9848,7 +9852,6 @@ var IframeView = function () {
 	}, {
 		key: "load",
 		value: function load(contents) {
-			
 			var loading = new _core.defer();
 			var loaded = loading.promise;
 
