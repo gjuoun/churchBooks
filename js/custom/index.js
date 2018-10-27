@@ -67,3 +67,12 @@ function japanese() {
   else
     window.location.href = 'http://recoveryversion.jp/bible_menu.php'
 }
+
+function scrollToId(id) {
+  let el = document.querySelector(`#${id}`)
+  let positionY = el.offsetTop
+  window.scrollTo({
+    top: positionY,
+    behavior: "smooth"
+  });
+}
