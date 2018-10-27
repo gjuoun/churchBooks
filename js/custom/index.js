@@ -37,10 +37,15 @@ class initPage {
   }
   
   scrollMenuBar(){
+    let titleBar = document.querySelector('.title').style
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-      document.querySelector('.title').style.background = 'rgba(255, 255, 255, 0.5)'
+      titleBar.background = 'rgba(255, 255, 255, 0.5)'
+      titleBar.position = 'fixed'
+      titleBar.left = '25%'
     } else {
-      document.querySelector('.title').style.background = '#FFF';
+      titleBar.background = '#FFF';
+      titleBar.position = null
+      title.left = null
     }
   }
   

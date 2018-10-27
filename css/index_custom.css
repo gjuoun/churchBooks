@@ -8,8 +8,7 @@ html {
 }
 
 .title{
-    position: fixed;
-    left: 25%;
+    margin: auto;
     height: 50px;
     width: 50%;
     text-align: center;
@@ -22,6 +21,8 @@ html {
 
 
 .logo img{
+    position: relative;
+    left: -30px;
     vertical-align: middle;
     display: inline;
     max-width: 32px;
@@ -29,7 +30,8 @@ html {
 }
 
 h2{
-    padding-left: 10px;
+    position: relative;
+    left: -19px;
     margin: 0;
     line-height: 100%;
     display: inline-block;
@@ -69,7 +71,7 @@ ol {
 .menu-container {
     width: 50%;
     margin: auto;
-    padding: 50px 30px 20px;
+    padding: 0px 30px 20px;
 }
 
 .comment{
@@ -151,7 +153,7 @@ a {
         width: 100%;
     }
     .menu-container{
-        padding: 0;
+        /*padding: 0;*/
     }
 
     .comment{
