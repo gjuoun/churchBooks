@@ -1,0 +1,158 @@
+/*<style type="text/css">*/
+/*<!--*/
+/*A:link		{ FONT-SIZE: 14px; COLOR: #3D61B6; TEXT-DECORATION: none }*/
+/*A:visited	{ FONT-SIZE: 14px; COLOR: #3D61B6; TEXT-DECORATION: none }*/
+/*A:hover		{ FONT-SIZE: 14px; COLOR: #FFFFFF; BACKGROUND-COLOR: #C1A2F7; TEXT-DECORATION: none }*/
+
+/*A.chaps:link	{ FONT-SIZE: 14px; COLOR: #3D61B6; TEXT-DECORATION: none }*/
+/*A.chaps:visited { FONT-SIZE: 14px; COLOR: #3D61B6; TEXT-DECORATION: none }*/
+/*A.chaps:hover	{ FONT-SIZE: 14px; COLOR: #FFFFFF; BACKGROUND-COLOR: #C1A2F7; TEXT-DECORATION: none }*/
+
+/*A.Oline:link	{ FONT-SIZE: 18px; COLOR: #666; TEXT-DECORATION: none }*/
+/*A.Oline:visited	{ FONT-SIZE: 18px; COLOR: #666; TEXT-DECORATION: none }*/
+/*A.Oline:hover	{ FONT-SIZE: 18px; COLOR: #FFFFFF; BACKGROUND-COLOR: #C1A2F7; TEXT-DECORATION: none }*/
+
+/*A.O:link 	{ FONT-SIZE: 18px; COLOR: #3D61B6; TEXT-DECORATION: none }*/
+/*A.O:visited	{ FONT-SIZE: 18px; COLOR: #3D61B6; TEXT-DECORATION: none }*/
+/*A.O:hover	{ FONT-SIZE: 18px; COLOR: #FFFFFF; BACKGROUND-COLOR: #C1A2F7; TEXT-DECORATION: none }*/
+
+/*A.notes:link	{ FONT-SIZE: 14px; COLOR: #0000FF; BACKGROUND-COLOR: #FFFFFF; TEXT-DECORATION: none ;}*/
+/*A.notes:visited	{ FONT-SIZE: 14px; COLOR: #0000FF; BACKGROUND-COLOR: #FFFFFF; TEXT-DECORATION: none ;}*/
+/*A.notes:hover	{ FONT-SIZE: 14px; COLOR: #FFFFFF; BACKGROUND-COLOR: #C1A2F7; TEXT-DECORATION: none ;}*/
+
+/*A.CRight:link	{ FONT-SIZE: 14px; COLOR: #800080; BACKGROUND-COLOR: #FFFFFF; TEXT-DECORATION: none }*/
+/*A.CRight:visited{ FONT-SIZE: 14px; COLOR: #800080; BACKGROUND-COLOR: #FFFFFF; TEXT-DECORATION: none }*/
+/*A.CRight:hover	{ FONT-SIZE: 14px; COLOR: #FFFFFF; BACKGROUND-COLOR: #C1A2F7; TEXT-DECORATION: none }*/
+
+/*A.BRight:link	{ FONT-SIZE: 14px; COLOR: #808080; BACKGROUND-COLOR: #FFFFFF; TEXT-DECORATION: none }*/
+/*A.BRight:visited{ FONT-SIZE: 14px; COLOR: #808080; BACKGROUND-COLOR: #FFFFFF; TEXT-DECORATION: none }*/
+/*A.BRight:hover	{ FONT-SIZE: 14px; COLOR: #FFFFFF; BACKGROUND-COLOR: #C1A2F7; TEXT-DECORATION: none }*/
+
+/*A.vsref:visited { FONT-SIZE: 12px; COLOR: #2023af; TEXT-DECORATION: none; FONT-WEIGHT: bold;}*/
+/*A.vsref:link    { FONT-SIZE: 12px; COLOR: #2023af; TEXT-DECORATION: none; FONT-WEIGHT: bold;}*/
+/*A.vsref:hover   { FONT-SIZE: 12px; COLOR: #ffffff; BACKGROUND: #2023af; TEXT-DECORATION: none;}*/
+
+/* ���Ȿ�ĵ�����color="#808080" */
+
+body {
+    width: 1080px;
+    margin: auto;
+}
+
+SELECT {
+    FONT-SIZE: 14px;
+    FONT-FAMILY: ����;
+    BACKGROUND-COLOR: white
+}
+
+.SubjectA {
+    FONT-SIZE: 14px;
+    COLOR: #7492D6;
+}
+
+.SubjectB {
+    FONT-SIZE: 16px;
+    COLOR: lightgrey;
+}
+
+.TBodyStr {
+    FONT-SIZE: 14px;
+    COLOR: #666699;
+    background-color: #F7FAFF;
+}
+
+.TableBodyStr {
+    FONT-SIZE: 14px;
+    COLOR: #666699;
+    background-color: #F7FAFF;
+}
+
+.OutLeStr {
+    FONT-SIZE: 14px;
+    COLOR: #808080;
+}
+
+.ChapHead {
+    FONT-SIZE: 14px;
+    COLOR: #000000;
+    background-color: E1EDFF;
+}
+
+.xref {
+    FONT-SIZE: 14px;
+    COLOR: #2023af
+}
+
+.title {
+    FONT-SIZE: 50px;
+    Font-weight: bolder;
+    COLOR: #666;
+    letter-spacing: 2em;
+}
+
+.title1 {
+    FONT-SIZE: 24px;
+    Font-weight: bolder;
+    COLOR: lightgrey;
+    letter-spacing: 1em;
+}
+
+.title2 {
+    FONT-SIZE: 20px;
+    Font-weight: bolder;
+    COLOR: lightgrey;
+}
+
+.title3 {
+    FONT-SIZE: 40px;
+    Font-weight: bolder;
+    COLOR: red;
+}
+
+.title4 {
+    FONT-SIZE: 30px;
+    Font-weight: bolder;
+    COLOR: #666;
+    letter-spacing: 1em;
+}
+
+.title5 {
+    FONT-SIZE: 50px;
+    Font-weight: bolder;
+    COLOR: #666;
+}
+
+.td {
+    font-size: 12pt;
+    color: black;
+    border: 1px dotted lightgrey;
+}
+
+td{
+    min-width: 30px;
+}
+
+
+-->
+/*</style>*/
+
+a {
+    color: green;
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+    background: darkgreen;
+}
+
+a:visited {
+    color: dodgerblue;
+}
+
+@media only screen and (max-width: 960px) {
+    body {
+        width: 100%;
+    }
+
+}
